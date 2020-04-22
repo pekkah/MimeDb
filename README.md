@@ -1,9 +1,11 @@
-= Mime type db
+Mime type db
+-------------
 
 * Provides methods to get mime-type from extension
 * DB is generated from [mime-db](https://github.com/jshttp/mime-db)
 
-== Usage
+Usage
+======
 
 ```csharp
 [Theory]
@@ -21,6 +23,7 @@ public void TryGet(string extension, string mimeType)
 }
 ```
 
-== Contribution
+Contribution
+============
 
 To add new mime type please make PR at [mime-db](https://github.com/jshttp/mime-db).
