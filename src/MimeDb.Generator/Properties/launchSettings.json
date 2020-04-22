@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MimeDb.Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../../node_modules/mime-db/db.json ../../../../MimeDb/MimeDb.cs"
+    }
+  }
+}
