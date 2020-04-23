@@ -8,5 +8,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>mime mime-db mime-types</PackageTags>
     <Authors>Pekka Heikura</Authors>
+    <DebugType>embedded</DebugType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"
+                      Condition="'$(IsPackable)' == 'true'" />
+  </ItemGroup>
 </Project>
