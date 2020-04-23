@@ -23,6 +23,8 @@ public void TryGet(string extension, string mimeType)
 }
 ```
 
+> NOTE: Extension can start with '.'
+
 Contribution
 -------------
 
