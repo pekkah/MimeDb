@@ -8,6 +8,7 @@
     <Authors>Pekka Heikura</Authors>
     <DebugType>embedded</DebugType>
     <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 </Project>
