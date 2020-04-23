@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MimeDb.Generator", "src\Mim
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6CA3219-E8A0-4E6B-A23C-AADC71A41A0D}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		Directory.Build.props = Directory.Build.props
 		.github\workflows\master.yml = .github\workflows\master.yml
 		README.md = README.md
@@ -14,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MimeDb", "src\MimeDb\MimeDb.csproj", "{A3995B67-BB0C-47B3-ABC0-14963A068EA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimeDb.Facts", "tests\MimeDb.Facts\MimeDb.Facts.csproj", "{6F31637B-F0B5-4CF4-B0D4-B40481FE1467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MimeDb.Facts", "tests\MimeDb.Facts\MimeDb.Facts.csproj", "{6F31637B-F0B5-4CF4-B0D4-B40481FE1467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
