@@ -1,14 +1,16 @@
-name: .NET Core
+name: Build
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  release:
+    types:
+      - created
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -35,9 +37,17 @@ jobs:
     - run: npm install
     - name: Install dependencies
       run: dotnet restore
+    - name: Run generator
+      run: dotnet run -c release -p ./src/MimeDb.Generator -- ./node_modules/mime-db/db.json ./src/MimeDb/MimeDb.cs
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build -c Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --verbosity normal
     - name: Pack
-      run: dotnet pack --no-restore --verbosity normal /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
+      run: |
+        dotnet pack --no-restore /p:PackageVersion=${{ steps.gitversion.outputs.semVer }} -o ./artifacts
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifacts
+        path: ./artifacts

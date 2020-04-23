@@ -2,11 +2,10 @@
 <Project>
   <PropertyGroup>
     <Copyright>Pekka Heikura</Copyright>
-    <PackageProjectUrl>https://github.com/pekkah/mime-db</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/pekkah/mime-db</RepositoryUrl>
-    <Description>MimeTypes DB</Description>
+    <Description>MimeTypes DB based on mime-db</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>mime mime-db mime-types</PackageTags>
     <Authors>Pekka Heikura</Authors>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 </Project>

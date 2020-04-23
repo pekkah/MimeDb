@@ -10,7 +10,7 @@ namespace MimeDb.Generator
         private readonly StreamWriter _writer;
 
         private const string Namespace = "MimeDb";
-        private const string Name = "_Mime";
+        private const string Name = "Generated";
         private const string InternalDictionaryName = "Db";
 
         public MimeTypeClassWriter(StreamWriter writer)
