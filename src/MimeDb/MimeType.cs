@@ -20,7 +20,7 @@
             if (extension.StartsWith("."))
                 extension = extension.Substring(1);
             
-            return _Mime.Db.TryGetValue(extension, out type);
+            return Generated.Db.TryGetValue(extension, out type);
         }
     }
 }
