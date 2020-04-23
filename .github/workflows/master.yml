@@ -42,4 +42,10 @@ jobs:
     - name: Test
       run: dotnet test --verbosity normal
     - name: Pack
-      run: dotnet pack --no-restore --verbosity normal /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
+      run: |
+        dotnet pack --no-restore /p:PackageVersion=${{ steps.gitversion.outputs.semVer }} -o ./artifacts
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifacts
+        path: ./artifacts
