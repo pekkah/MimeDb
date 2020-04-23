@@ -35,11 +35,11 @@ jobs:
     - run: npm install
     - name: Install dependencies
       run: dotnet restore
-    - name: Test
-      run: dotnet test --verbosity normal
     - name: Run generator
-      run: dotnet run -c release -p src/MimeDb.Generator -- MimeDb/node_modules/mime-db/db.json MimeDb/src/MimeDb/MimeDb.cs
+      run: dotnet run -c release -p ./src/MimeDb.Generator -- ./node_modules/mime-db/db.json ./src/MimeDb/MimeDb.cs
     - name: Build
       run: dotnet build -c Release --no-restore
+    - name: Test
+      run: dotnet test --verbosity normal
     - name: Pack
       run: dotnet pack --no-restore --verbosity normal /p:PackageVersion=${{ steps.gitversion.outputs.semVer }}
