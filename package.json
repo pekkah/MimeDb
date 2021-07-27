@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mime-db": "^1.45.0"
+    "mime-db": "^1.49.0"
   }
 }
