@@ -54,6 +54,6 @@ jobs:
         path: ./artifacts
     - name: Publish NuGet
       if: github.event_name == 'release' && github.event.action == 'created'
-      run: dotnet nuget push ./artifacts/*.nupkg -k ${{ secrets.NUGET_PUSH }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./artifacts/*.nupkg -k ${{ secrets.NUGET_PUSH }} -s https://api.nuget.org/v3/index.json --skip-duplicate
       
       
