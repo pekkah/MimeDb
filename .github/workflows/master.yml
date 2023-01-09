@@ -21,25 +21,25 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '18'
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: 7.0.x
     - name: Install GitVersion
-      uses: gittools/actions/gitversion/setup@v0.9.7
+      uses: gittools/actions/gitversion/setup@v0.9.15
       with:
-          versionSpec: '5.5.x'
+          versionSpec: '5.x'
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
-      uses: gittools/actions/gitversion/execute@v0.9.7
+      uses: gittools/actions/gitversion/execute@v0.9.15
     - run: |
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
     - run: npm install
     - name: Install dependencies
       run: dotnet restore
     - name: Run generator
-      run: dotnet run -c release -p ./src/MimeDb.Generator -- ./node_modules/mime-db/db.json ./src/MimeDb/MimeDb.cs
+      run: dotnet run -c release --project ./src/MimeDb.Generator -- ./node_modules/mime-db/db.json ./src/MimeDb/MimeDb.cs
     - name: Build
       run: dotnet build -c Release --no-restore
     - name: Test
